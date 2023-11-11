@@ -1,0 +1,46 @@
+.job-post {
+  padding: 2rem 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  cursor: default;
+  margin-bottom: 1.5rem;
+  &:hover {
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+
+  .job-post-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  .job-post-name {
+    font-size: 14px;
+    color: #36454f;
+    margin-bottom: 10px;
+  }
+
+  .job-post-e-s-l {
+    gap: 1.5rem;
+    display: flex;
+    color: #36454f;
+    font-size: 0.875rem;
+    .job-post-e {
+    }
+  }
+  .job-post-description {
+    color: #36454f;
+    font-size: 0.875rem;
+    max-width: 37.5rem;
+    margin-bottom: 1.5rem;
+    div {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .job-post-apply {
+    display: flex;
+    justify-content: right;
+  }
+}

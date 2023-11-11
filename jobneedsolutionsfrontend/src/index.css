@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-size: 1rem;
+  /* font-family: "Poppins", sans-serif; */
+  /* font-family: "Rubik", sans-serif; */
+
+  /* font-family: "Noto Sans Display", sans-serif; */
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+}
+
+footer {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* 
+
+font-family: 'Noto Sans Display', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+
+
+*/

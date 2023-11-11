@@ -1,0 +1,44 @@
+.job-section-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  gap: 24px;
+  margin: 48px auto;
+  .job-section-filter {
+    width: 25%;
+    height: 50rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+    background-color: #ffffff;
+
+    /*
+    Below code needs to be removed.
+    */
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    opacity: 0.5;
+    cursor: default;
+
+    // box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    border: 1px solid rgb(196, 196, 196);
+    /**/
+  }
+
+  //   .job-section-jobs {
+  //     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  //     border-radius: 4px;
+  //     width: 75%;
+  //   }
+  .job-section-ads {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+    width: 25%;
+    background-color: #ffffff;
+  }
+  .job-section-jobposts {
+    border-radius: 4px;
+    width: 75%;
+  }
+}

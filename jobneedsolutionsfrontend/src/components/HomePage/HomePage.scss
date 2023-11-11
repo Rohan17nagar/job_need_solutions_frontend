@@ -1,0 +1,30 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 10rem);
+  .home-heading {
+    font-size: 4.5rem;
+    color: #0096ff;
+    text-align: center;
+  }
+
+  .home-buttons {
+    display: flex;
+    margin: 0 auto;
+    gap: 100px;
+  }
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 10rem);
+
+    .home-heading {
+      font-size: 3rem;
+      margin: 0.625rem 0.625rem 1.875rem 0.625rem;
+    }
+
+    .home-buttons {
+      gap: 50px;
+    }
+  }
+}
