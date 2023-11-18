@@ -20,7 +20,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/jobs' element={<Jobs />} />
         <Route path='/jobs/:postId' element={<PostDetailPage />} />
-        <Route path='/admin' element={<AdminHome />} />
+        <Route path='/admin/*' element={<AdminHome />} />
+        {/* <Route path='/admin/user-management' element={<UserManagement />} /> */}
       </Routes>
       <StickyFooter />
     </>

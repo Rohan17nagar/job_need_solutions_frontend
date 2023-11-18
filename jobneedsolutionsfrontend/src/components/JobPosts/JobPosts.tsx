@@ -35,7 +35,7 @@ const JobPosts: React.FC<JobPostPropTypes> = (props: JobPostPropTypes) => {
 
   return (
     <div className='job-posts-container'>
-      {props.data.map((item: ItemType) => {
+      {props?.data?.map((item: ItemType) => {
         return (
           <div onClick={() => handleJobPostClick(item)}>
             <JobPost

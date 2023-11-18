@@ -41,7 +41,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position='static'>
+    <AppBar position='static' className='header-container'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <Typography

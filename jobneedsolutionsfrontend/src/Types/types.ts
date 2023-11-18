@@ -7,3 +7,10 @@ export type ContentType = {
   gender: string;
   resume?: string;
 };
+
+export type DrawerOptionType = {
+  id: number;
+  name: string;
+  icon: string;
+  enabled: boolean;
+};

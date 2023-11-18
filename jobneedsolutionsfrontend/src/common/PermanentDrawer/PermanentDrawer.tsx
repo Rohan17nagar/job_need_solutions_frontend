@@ -10,15 +10,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+import { DrawerOptionType } from "../../Types/types";
 
 const drawerWidth = 240;
-
-type DrawerOptionType = {
-  id: number;
-  name: string;
-  icon: string;
-  enabled: boolean;
-};
 
 interface Props {
   /**
@@ -31,6 +25,7 @@ interface Props {
     item: DrawerOptionType
   ) => void;
   drawerOptions: DrawerOptionType[];
+  activeItem: number;
 }
 
 export default function ResponsiveDrawer(props: Props) {
@@ -49,6 +44,7 @@ export default function ResponsiveDrawer(props: Props) {
         {props.drawerOptions.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton
+              selected={props.activeItem === item.id}
               disabled={!item.enabled}
               onClick={(e) => props.onClick(e, item)}
             >

@@ -3,4 +3,19 @@
   //   width: 100%;
   //   bottom: 0;
   margin-top: 6.25rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
+  .MuiBox-root {
+    background-image: linear-gradient(
+      to right,
+      #120b44,
+      #0f0b3e,
+      #0d0a39,
+      #0d0933,
+      #0c072d
+    );
+    color: white;
+  }
 }

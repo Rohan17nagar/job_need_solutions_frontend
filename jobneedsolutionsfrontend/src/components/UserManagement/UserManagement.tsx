@@ -104,7 +104,6 @@ const UserManagement: React.FC = () => {
 
       <div className='user-management-table'>
         <CommonTable
-          // tableData={adminSliceData.adminAllUsers.content}
           columns={columns}
           rows={rows}
           getRowId={(row: ContentType) => `${row.userId}-${row.email}`}
