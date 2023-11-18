@@ -32,7 +32,15 @@ export const getAllJobPosts = createAsyncThunk<Array<JobPostItem>>(
   "api/postData",
   async () => {
     const response = await axios.get(
-      "http://localhost:8080/jobPost/getAllJobPosts"
+      "http://localhost:8080/jobPost/getAllJobPosts",
+      {
+        headers: {
+          Authorization: `Bearer ${
+            JSON.parse(sessionStorage.getItem("user") ?? "").jwtToken
+          }`,
+          "Content-Type": "application/json",
+        },
+      }
     );
     return response.data;
   }

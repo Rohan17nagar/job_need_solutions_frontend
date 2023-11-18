@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.scss";
 import CommonButton from "../../common/Button/CommonButton";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { add, fetchData, postData } from "../../redux/slice/HomeSlice";
+import { add, fetchData } from "../../redux/slice/HomeSlice";
 
 // import axios from "axios";
 const HomePage: React.FC = () => {
+  const [showLoginButton, setShowLoginButton] = useState(true);
+
   const navigate = useNavigate();
 
   const handleButtonClick = (name: string) => {
@@ -44,17 +46,34 @@ const HomePage: React.FC = () => {
     console.log(data);
   }, [data]);
 
+  useEffect(() => {
+    const userdata: string = sessionStorage.getItem("user") ?? "";
+
+    if (userdata !== "" && JSON.parse(userdata)?.jwtToken?.length > 0) {
+      setShowLoginButton(false);
+    } else {
+      setShowLoginButton(true);
+    }
+  }, [sessionStorage.getItem("user")]);
+
   return (
     <div className='home-container'>
       <h1 className='home-heading'>Find your dream job here</h1>
 
-      <div className='home-buttons'>
-        <CommonButton
-          name='Sign Up'
-          onClick={() => handleButtonClick("signup")}
-        />
-        <CommonButton name='Login' onClick={() => handleButtonClick("login")} />
-      </div>
+      {!showLoginButton ? (
+        <div>Hello</div>
+      ) : (
+        <div className='home-buttons'>
+          <CommonButton
+            name='Sign Up'
+            onClick={() => handleButtonClick("signup")}
+          />
+          <CommonButton
+            name='Login'
+            onClick={() => handleButtonClick("login")}
+          />
+        </div>
+      )}
     </div>
   );
 };

@@ -12,17 +12,47 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/store";
+import { login } from "../../redux/slice/userSlice";
 
 const defaultTheme = createTheme();
 
 export default function Login() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+  const [loginData, setLoginData] = React.useState({
+    email: "",
+    password: "",
+  });
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get("email"),
+  //     password: data.get("password"),
+  //   });
+  // };
+
+  // const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
+
+  const handleTextChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    name: string
+  ) => {
+    setLoginData({
+      ...loginData,
+      [name]: e.target.value,
     });
+  };
+
+  const handleLoginClick = () => {
+    const payload = {
+      email: loginData.email,
+      password: loginData.password,
+    };
+
+    dispatch(login(payload));
   };
 
   return (
@@ -43,12 +73,7 @@ export default function Login() {
           <Typography component='h1' variant='h5'>
             Sign in
           </Typography>
-          <Box
-            component='form'
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component='form' noValidate sx={{ mt: 1 }}>
             <TextField
               margin='normal'
               required
@@ -57,7 +82,9 @@ export default function Login() {
               label='Email Address'
               name='email'
               autoComplete='email'
+              onChange={(e) => handleTextChange(e, "email")}
               autoFocus
+              value={loginData.email}
             />
             <TextField
               margin='normal'
@@ -68,16 +95,19 @@ export default function Login() {
               type='password'
               id='password'
               autoComplete='current-password'
+              onChange={(e) => handleTextChange(e, "password")}
+              value={loginData.password}
             />
             <FormControlLabel
               control={<Checkbox value='remember' color='primary' />}
               label='Remember me'
             />
             <Button
-              type='submit'
+              type='button'
               fullWidth
               variant='contained'
               sx={{ mt: 3, mb: 2 }}
+              onClick={() => handleLoginClick()}
             >
               Sign In
             </Button>

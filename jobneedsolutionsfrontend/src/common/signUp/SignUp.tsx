@@ -60,6 +60,7 @@ export default function SignUp() {
       gender: signUpData.gender,
       resumeData: "",
       address: null,
+      role: "USER",
     };
 
     dispatch(addEmployer(payload));

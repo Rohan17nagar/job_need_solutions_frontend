@@ -19,6 +19,7 @@ const JobSection: React.FC = () => {
 
   useEffect(() => {
     dispatch(getAllJobPosts());
+
     console.log("check twice");
   }, []);
 

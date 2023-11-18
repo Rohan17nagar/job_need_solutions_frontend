@@ -1,0 +1,58 @@
+.admin-home-container {
+  display: flex;
+
+  .admin-home-left {
+    width: 20%;
+
+    .MuiBox-root {
+      .MuiIconButton-root {
+        top: 3.3438rem;
+        left: 2.125rem;
+        color: blue;
+      }
+    }
+
+    .MuiDrawer-root {
+      .MuiDrawer-paper {
+        top: 4.0625rem;
+        width: 100%;
+        position: unset;
+      }
+    }
+  }
+
+  .admin-home-right {
+    width: 80%;
+    margin-top: 6rem;
+  }
+
+  .MuiBox-root {
+    width: 100%;
+  }
+
+  //   @media (max-width: 1400px) {
+  //     .admin-home-left {
+  //       width: 0;
+  //     }
+  //     .admin-home-right {
+  //       width: 100%;
+  //     }
+  //   }
+
+  @media (max-width: 850px) {
+    .admin-home-left {
+      width: 30%;
+    }
+    .admin-home-right {
+      width: 70%;
+    }
+  }
+  @media (max-width: 600px) {
+    .admin-home-left {
+      width: 0;
+    }
+    .admin-home-right {
+      width: 100%;
+    }
+  }
+}

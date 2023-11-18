@@ -7,6 +7,7 @@ import Login from "./common/login/Login";
 import Jobs from "./components/Jobs/Jobs";
 import StickyFooter from "./common/StickyFooter/StickyFooter";
 import PostDetailPage from "./components/PostDetailPage/PostDetailPage";
+import AdminHome from "./components/AdminHome/AdminHome";
 
 function App() {
   console.log("heom");
@@ -19,6 +20,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/jobs' element={<Jobs />} />
         <Route path='/jobs/:postId' element={<PostDetailPage />} />
+        <Route path='/admin' element={<AdminHome />} />
       </Routes>
       <StickyFooter />
     </>

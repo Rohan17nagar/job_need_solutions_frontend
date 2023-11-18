@@ -2,3 +2,8 @@
   color: white;
   text-decoration: none;
 }
+
+header.MuiPaper-root {
+  z-index: 1;
+  position: fixed;
+}

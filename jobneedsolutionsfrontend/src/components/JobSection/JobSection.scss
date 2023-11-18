@@ -42,3 +42,17 @@
     width: 75%;
   }
 }
+
+@media (max-width: 767px) {
+  .job-section-container {
+    width: 95%;
+
+    .job-section-filter,
+    .job-section-ads {
+      display: none;
+    }
+    .job-section-jobposts {
+      width: 100%;
+    }
+  }
+}
