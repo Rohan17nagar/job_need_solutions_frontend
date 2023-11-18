@@ -4,6 +4,12 @@
   .admin-home-left {
     width: 20%;
 
+    .MuiList-root {
+      height: 100vh;
+      position: fixed;
+      background: white;
+    }
+
     .MuiBox-root {
       .MuiIconButton-root {
         top: 3.3438rem;
