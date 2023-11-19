@@ -4,10 +4,11 @@
 }
 
 .header-container {
-  background: rgb(248, 240, 240) !important;
+  // background: rgb(248, 240, 240) !important;
 }
 
 header.MuiPaper-root {
   z-index: 1;
   position: fixed;
+  background: white;
 }

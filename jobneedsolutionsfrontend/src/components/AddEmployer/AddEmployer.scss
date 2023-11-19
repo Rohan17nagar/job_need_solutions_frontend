@@ -35,6 +35,11 @@
   .add-employer-field {
     margin-bottom: 1rem;
   }
+  .add-employer-buttons {
+    display: flex;
+    justify-content: right;
+    gap: 1.25rem;
+  }
 }
 @media (max-width: 786px) {
   .add-employer-input {
